@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 643, in <module>
+    main() 
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 631, in main
+    experiment.build_tree_from_paper(args.paper, max_depth=args.max_depth)
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 207, in build_tree_from_paper
+    tree_data = self._extract_json_from_llm_response(response)
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 536, in _extract_json_from_llm_response
+    raise ValueError("Could not extract valid JSON from LLM response")
+ValueError: Could not extract valid JSON from LLM response

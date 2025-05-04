@@ -1,0 +1,422 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 5
+Samples per node: 3
+Output name: experiment_20250417_150009
+---------------------------------------
+Building tree from papers/ds3_matrix_model/cleaned.md with max depth 5
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 10000
+API response status: 200
+API response length: 16659 chars
+Successfully received content (15640 chars)
+Found 13 nodes to process
+Processing nodes in parallel with 16 workers
+Processing node: Overall Goal: Establish Duality between dS₃ Quantum Gravity and a Double-Scaled Matrix Integral
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Canonical Quantization and Hilbert Space of dS₃ Gravity
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: First Order Formalism and Chern–Simons Rewriting
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Implementation of Wheeler–DeWitt Constraints and Polarization Choice
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Construction of the Cosmological Wavefunction and Integrated Cosmological Correlators
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Evaluation via TQFT and Boundary Conditions at the Big Bang
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Factorization and Normalizability Constraints
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Dual Matrix Model and String Amplitude Correspondence
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Mapping Liouville Correlators to Resolvent Observables
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Fixing the String Coupling via the Three-Sphere Partition Function
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Microstate Counting and de Sitter Entropy Matching
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Definition and Evaluation of the Effective Number of Eigenvalues
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+Processing node: Matching Microscopic Entropy with Gravitational S³ Partition Function
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 11179 chars
+Successfully received content (10398 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 5535 chars
+Successfully received content (4784 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 6138 chars
+Successfully received content (5391 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 8436 chars
+Successfully received content (7662 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7578 chars
+Successfully received content (6784 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 921 chars
+Successfully received content (238 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 8190 chars
+Successfully received content (7433 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 6308 chars
+Successfully received content (5572 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 9164 chars
+Successfully received content (8397 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7366 chars
+Successfully received content (6602 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 3296 chars
+Successfully received content (2589 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 4457 chars
+Successfully received content (3692 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7875 chars
+Successfully received content (7118 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 9561 chars
+Successfully received content (8787 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 6987 chars
+Successfully received content (6243 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7233 chars
+Successfully received content (6479 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 3742 chars
+Successfully received content (2965 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7568 chars
+Successfully received content (6806 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7258 chars
+Successfully received content (6497 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 8715 chars
+Successfully received content (7954 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 6329 chars
+Successfully received content (5580 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 7423 chars
+Successfully received content (6670 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 7415 chars
+Successfully received content (6650 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1358 chars
+Successfully received content (670 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 4746 chars
+Successfully received content (3978 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 7683 chars
+Successfully received content (6919 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1541 chars
+Successfully received content (853 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 7522 chars
+Successfully received content (6774 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 3731 chars
+Successfully received content (2960 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1450 chars
+Successfully received content (762 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 6504 chars
+Successfully received content (5762 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1444 chars
+Successfully received content (757 chars)
+API response status: 200
+API response length: 8314 chars
+Successfully received content (7552 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1518 chars
+Successfully received content (830 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 8541 chars
+Successfully received content (7755 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1479 chars
+Successfully received content (791 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 6687 chars
+Successfully received content (5948 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1156 chars
+Successfully received content (472 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 8973 chars
+Successfully received content (8205 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1667 chars
+Successfully received content (979 chars)
+API response status: 200
+API response length: 9503 chars
+Successfully received content (8741 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2043 chars
+Successfully received content (1356 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1716 chars
+Successfully received content (1027 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 7747 chars
+Successfully received content (6970 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2154 chars
+Successfully received content (1461 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1687 chars
+Successfully received content (998 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1415 chars
+Successfully received content (727 chars)
+API response status: 200
+API response length: 6967 chars
+Successfully received content (6231 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1647 chars
+Successfully received content (959 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1808 chars
+Successfully received content (1120 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1238 chars
+Successfully received content (550 chars)
+API response status: 200
+API response length: 1895 chars
+Successfully received content (1207 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2156 chars
+Successfully received content (1463 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 8536 chars
+Successfully received content (7745 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2520 chars
+Successfully received content (1828 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 7477 chars
+Successfully received content (6711 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 6754 chars
+Successfully received content (6003 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1926 chars
+Successfully received content (1232 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2009 chars
+Successfully received content (1321 chars)
+API response status: 200
+API response length: 1636 chars
+Successfully received content (949 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1895 chars
+Successfully received content (1205 chars)
+API response status: 200
+API response length: 1510 chars
+Successfully received content (821 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 9409 chars
+Successfully received content (8638 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1840 chars
+Successfully received content (1153 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1540 chars
+Successfully received content (852 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1354 chars
+Successfully received content (667 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1500 chars
+Successfully received content (813 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1618 chars
+Successfully received content (930 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1631 chars
+Successfully received content (944 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 2122 chars
+Successfully received content (1430 chars)
+API response status: 200
+API response length: 1480 chars
+Successfully received content (792 chars)
+API response status: 200
+API response length: 1743 chars
+Successfully received content (1056 chars)
+API response status: 200
+API response length: 1622 chars
+Successfully received content (934 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1625 chars
+Successfully received content (936 chars)
+API response status: 200
+API response length: 1750 chars
+Successfully received content (1062 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1554 chars
+Successfully received content (866 chars)
+API response status: 200
+API response length: 1550 chars
+Successfully received content (862 chars)
+API response status: 200
+API response length: 1788 chars
+Successfully received content (1098 chars)
+Results saved to /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_20250417_150009.json
+Experiment completed successfully
+Experiment completed successfully
+Results saved to experiment_20250417_150009.json

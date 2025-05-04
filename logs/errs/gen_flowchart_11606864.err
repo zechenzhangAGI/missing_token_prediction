@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/generate_flowchart.py", line 491, in <module>
+    main() 
+  File "/n/home04/zechenzhang/missing_token_prediction/generate_flowchart.py", line 488, in main
+    generate_html(tree_data_json_string, summary_stats, output_path)
+  File "/n/home04/zechenzhang/missing_token_prediction/generate_flowchart.py", line 107, in generate_html
+    stats_html = f"""
+ValueError: Invalid format specifier

@@ -1,0 +1,14 @@
+Running depth score analysis with configuration:
+Results directory: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results
+Min depth: 3
+Max depth: 7
+Output file: depth_level_scores.png
+---------------------------------------
+Found 1 files for depth 3
+Found 1 files for depth 4
+Found 1 files for depth 5
+Found 1 files for depth 6
+Found 1 files for depth 7
+Plot saved to depth_level_scores.png
+Depth score analysis completed successfully
+Plot saved to: depth_level_scores.png

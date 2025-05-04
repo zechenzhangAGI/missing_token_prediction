@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 462, in _call_llm
+    return response_dict["choices"][0]["message"]["content"].strip()
+KeyError: 'choices'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 643, in <module>
+    main() 
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 631, in main
+    experiment.build_tree_from_paper(args.paper, max_depth=args.max_depth)
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 198, in build_tree_from_paper
+    response = self._call_llm(
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 468, in _call_llm
+    raise RuntimeError(f"Failed to call Harvard OpenAI endpoint after {max_retries} attempts")
+RuntimeError: Failed to call Harvard OpenAI endpoint after 3 attempts

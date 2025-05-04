@@ -1,0 +1,50 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 7
+Samples per node: 3
+Output name: experiment_depth7_samples3
+---------------------------------------
+Building tree from papers/ds3_matrix_model/cleaned.md with max depth 7
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 10000
+API response status: 200
+API response length: 27637 chars
+Successfully received content (26258 chars)
+Found 1 nodes to process
+Processing nodes sequentially
+Processing node: Error: Invalid \escape: line 4 column 260 (char 825)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 4557 chars
+Successfully received content (3839 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1166 chars
+Successfully received content (486 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 200
+API response length: 1077 chars
+Successfully received content (399 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1280 chars
+Successfully received content (591 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1207 chars
+Successfully received content (521 chars)
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 200
+API response length: 1357 chars
+Successfully received content (671 chars)
+Results saved to /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth7_samples3.json
+Experiment completed successfully
+Experiment completed successfully
+Results saved to experiment_depth7_samples3.json

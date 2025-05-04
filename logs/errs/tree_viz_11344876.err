@@ -1,0 +1,21 @@
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/.conda/envs/ML_2024/lib/python3.10/site-packages/networkx/drawing/nx_agraph.py", line 304, in pygraphviz_layout
+    import pygraphviz
+ModuleNotFoundError: No module named 'pygraphviz'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_visualizer.py", line 507, in <module>
+    main() 
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_visualizer.py", line 503, in main
+    visualizer.generate_html_report(args.output)
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_visualizer.py", line 247, in generate_html_report
+    tree_viz = self.visualize_tree()
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_visualizer.py", line 86, in visualize_tree
+    pos = nx.nx_agraph.graphviz_layout(G, prog="dot", args="-Grankdir=TB")
+  File "/n/home04/zechenzhang/.conda/envs/ML_2024/lib/python3.10/site-packages/networkx/drawing/nx_agraph.py", line 260, in graphviz_layout
+    return pygraphviz_layout(G, prog=prog, root=root, args=args)
+  File "/n/home04/zechenzhang/.conda/envs/ML_2024/lib/python3.10/site-packages/networkx/drawing/nx_agraph.py", line 306, in pygraphviz_layout
+    raise ImportError(
+ImportError: requires pygraphviz http://pygraphviz.github.io/

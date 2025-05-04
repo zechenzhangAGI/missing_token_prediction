@@ -1,0 +1,12 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 5
+Samples per node: 3
+Output name: experiment_20250417_003640
+---------------------------------------
+Building tree from papers/ds3_matrix_model/cleaned.md with max depth 5
+API Call error (attempt 1/3): 'choices'
+API Call error (attempt 2/3): 'choices'
+API Call error (attempt 3/3): 'choices'
+Experiment failed with error code 1

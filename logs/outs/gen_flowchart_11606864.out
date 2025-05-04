@@ -1,0 +1,8 @@
+SLURM Job ID: 11606864
+Running flowchart generation with configuration:
+Input Results File: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth5_samples3.json
+Output HTML File: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth5_samples3_flowchart.html
+Config File: config.json
+---------------------------------------
+Running: python generate_flowchart.py "/n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth5_samples3.json" -o "/n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth5_samples3_flowchart.html"
+Flowchart generation failed with error code 1.

@@ -1,0 +1,2 @@
+Usage: sbatch /var/slurmd/spool/slurmd/job11606677/slurm_script [--results-file <path>] [--config <path>] [--max-depth <int>] [--samples <int>] [--output <name>]
+Unknown option: --max_depth

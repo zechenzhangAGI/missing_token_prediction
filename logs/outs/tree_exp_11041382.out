@@ -1,0 +1,57 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 5
+Samples per node: 3
+Output name: experiment_20250417_134539
+---------------------------------------
+Building tree from papers/ds3_matrix_model/cleaned.md with max depth 5
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 10000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Found 1 nodes to process
+Processing nodes sequentially
+Processing node: Error extracting JSON
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 3000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Calling Harvard API (attempt 1/5)
+Model: o3-mini-2025-01-31, Max tokens: 2000
+API response status: 400
+API response length: 210 chars
+WARNING: Response missing 'choices' key. Available keys: ['error']
+API ERROR: {'message': "Unsupported parameter: 'temperature' is not supported with this model.", 'type': 'invalid_request_error', 'param': 'temperature', 'code': 'unsupported_parameter'}
+Results saved to /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_20250417_134539.json
+Experiment completed successfully
+Experiment completed successfully
+Results saved to experiment_20250417_134539.json

@@ -1,0 +1,8 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 5
+Samples per node: 3
+Output name: experiment_20250417_131519
+---------------------------------------
+Experiment failed with error code 1

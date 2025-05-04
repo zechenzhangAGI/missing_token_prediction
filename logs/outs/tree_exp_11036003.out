@@ -1,0 +1,72 @@
+Running tree experiment with configuration:
+Paper: papers/ds3_matrix_model/cleaned.md
+Config file: config.json
+Max depth: 5
+Samples per node: 3
+Output name: experiment_20250417_130313
+---------------------------------------
+Building tree from papers/ds3_matrix_model/cleaned.md with max depth 5
+API call failed with status code: 400
+Response content: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+API Call error (attempt 1/5): API call failed with status code: 400
+Waiting 5 seconds before retrying...
+API call failed with status code: 400
+Response content: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+API Call error (attempt 2/5): API call failed with status code: 400
+Waiting 5 seconds before retrying...
+API call failed with status code: 400
+Response content: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+API Call error (attempt 3/5): API call failed with status code: 400
+Waiting 5 seconds before retrying...
+API call failed with status code: 400
+Response content: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+API Call error (attempt 4/5): API call failed with status code: 400
+Waiting 5 seconds before retrying...
+API call failed with status code: 400
+Response content: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+API Call error (attempt 5/5): API call failed with status code: 400
+All 5 attempts failed. Last error: API call failed with status code: 400
+Last response: {
+  "error": {
+    "message": "Unsupported parameter: 'max_tokens' is not supported with this model. Use 'max_completion_tokens' instead.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "unsupported_parameter"
+  }
+}
+Experiment failed with error code 1

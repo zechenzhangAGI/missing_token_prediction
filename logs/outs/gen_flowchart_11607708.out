@@ -1,0 +1,10 @@
+SLURM Job ID: 11607708
+Running flowchart generation with configuration:
+Input Results File: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3.json
+Output HTML File: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3_flowchart.html
+Config File: config.json
+---------------------------------------
+Running: python generate_flowchart.py "/n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3.json" -o "/n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3_flowchart.html"
+Successfully generated HTML flowchart: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3_flowchart.html
+Flowchart generation completed successfully.
+HTML report saved to: /n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results/experiment_depth3_samples3_flowchart.html

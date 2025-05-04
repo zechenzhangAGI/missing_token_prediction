@@ -1,0 +1,26 @@
+{
+  "llm_provider": "harvard",
+  "model_name": "o3-mini-2025-01-31",
+  "api_key": "your_api_key_here",
+  "harvard_api_key": "709KLfil8udIORZu9UjjE4jhaGTG6uW0",
+  "harvard_api_url": "https://go.apis.huit.harvard.edu/ais-openai-direct-limited-schools/v1/chat/completions",
+  "max_retries": 5,
+  "tree_builder_model": "o3-mini-2025-01-31",
+  "solver_model": "o3-mini-2025-01-31",
+  "judge_model": "o3-mini-2025-01-31",
+  "results_dir": "/n/netscratch/sompolinsky_lab/Everyone/zechenzhang/physics-eval/results",
+  "samples_per_node": 3,
+  "pass_threshold": 7.0,
+  "use_parallel": true,
+  "max_workers": 16,
+  "max_tokens": {
+    "tree_building": 10000,
+    "solving": 3000,
+    "judging": 2000
+  },
+  "temperature": {
+    "tree_building": 0.4,
+    "solving": 0.4,
+    "judging": 0.4
+  }
+} 

@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 466, in _call_llm
+    raise Exception(f"API call failed with status code: {response.status_code}")
+Exception: API call failed with status code: 400
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 671, in <module>
+    main() 
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 659, in main
+    experiment.build_tree_from_paper(args.paper, max_depth=args.max_depth)
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 198, in build_tree_from_paper
+    response = self._call_llm(
+  File "/n/home04/zechenzhang/missing_token_prediction/tree_experiment.py", line 496, in _call_llm
+    raise RuntimeError(f"Failed to call Harvard OpenAI endpoint after {max_retries} attempts. Check API key and URL.")
+RuntimeError: Failed to call Harvard OpenAI endpoint after 5 attempts. Check API key and URL.

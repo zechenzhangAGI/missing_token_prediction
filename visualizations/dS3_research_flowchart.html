@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>dS3 Paper – Interactive Research Flow Chart</title>
+
+  <!-- Basic styles for the page -->
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    h2 {
+      margin: 15px;
+    }
+
+    #chartArea {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: calc(100vh - 60px);
+    }
+    #chart {
+      flex: 1;
+      overflow: auto;
+      position: relative;
+    }
+    #infoPanel {
+      flex: 1;
+      margin-left: 10px;
+      margin-right: 10px;
+      overflow-y: auto;
+      border-left: 1px solid #ccc;
+      padding-left: 10px;
+    }
+    #infoPanel h3 {
+      margin-top: 0;
+    }
+    .detailBox {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 10px;
+      background: #fafafa;
+    }
+
+    /* Tree styles */
+    .node circle {
+      fill: #fff;
+      stroke: steelblue;
+      stroke-width: 2px;
+    }
+    .node text {
+      font: 12px sans-serif;
+      fill: #333;
+    }
+    .link {
+      fill: none;
+      stroke: #ccc;
+      stroke-width: 2px;
+      cursor: pointer;
+    }
+    .link:hover {
+      stroke: #999;
+    }
+  </style>
+
+  <!-- D3.js v7 -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- MathJax for equation rendering -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+  </script>
+</head>
+
+<body>
+  <h2>"A microscopic realization of dS3" – Research Flow Chart</h2>
+  <div id="chartArea">
+    <div id="chart"></div>
+    <div id="infoPanel">
+      <h3>Details</h3>
+      <div id="details" class="detailBox">
+        Click a node or an edge to see details here.
+      </div>
+    </div>
+  </div>
+
+  <script>
+const treeData = {
+  name: "Overall Goal: Establish dS3 / Matrix Model Duality",
+  linkDescription: "",
+  problemStatement: `
+      <p><strong>Overall Goal:</strong> Demonstrate the precise duality between pure dS3 quantum gravity and a specific double-scaled matrix integral.</p>
+      <p><strong>Context:</strong> dS3 gravity refers to (2+1)-dimensional Einstein gravity with a positive cosmological constant \\(\\Lambda = 1/\\ell^2\\). The dual matrix integral is the one identified by Collier et al. [1] as dual to the complex Liouville string.</p>
+      <p><strong>Task:</strong> Prove this duality by establishing the validity of its two main pillars, which serve as prerequisites: (1) The equivalence between integrated dS3 cosmological correlators (\\(\\mathcal{A}_n\\)) and matrix model resolvents (\\(W_n\\)), and (2) The equivalence between dS3 Gibbons-Hawking entropy (\\(S_{GH}\\)) and the matrix model's microscopic entropy (\\(S_{MM}\\)).</p>
+    `,
+  problemSolution: `
+      <p>The duality holds if and only if the goals of the two prerequisite child nodes are achieved:</p>
+      <ol>
+        <li><strong>Observables Match Proven (from Prereq 1):</strong> \\(\\mathcal{A}_n = W_n\\).</li>
+        <li><strong>Entropy Match Proven (from Prereq 2):</strong> \\(S_{MM} = S_{GH}\\).</li>
+      </ol>
+      <p>Successfully demonstrating both establishes the claimed dS3/Matrix Model duality.</p>
+    `,
+  children: [
+    { // Prerequisite 1 for Overall Goal
+      name: "Demonstrate Observables Match (A_n = W_n)",
+      linkDescription: "Prerequisite: Establish the equality between integrated dS correlators and matrix model resolvents.",
+      problemStatement: `
+          <p><strong>Goal:</strong> Prove the equality \\(\\mathcal{A}_n = W_n\\) between dS3 gravity observables and matrix model observables.</p>
+          <p><strong>Definitions:</strong></p>
+          <ul>
+            <li>\\(\\mathcal{A}_n = \\int Dg_{\\mathcal{J}^+} \\langle \\mathcal{O}_1 \dots \\mathcal{O}_n \\rangle_{\Psi}\\): The gauge-invariant n-point observable in dS3 gravity, obtained by integrating the correlation function of scalar operators \\(\\mathcal{O}_i\\) (with principal series dimension \\(\\Delta_i = 1+i\\lambda_i\\)) in the specific dS quantum state \\(|\\Psi\\rangle\\) over all metrics \\(g_{\\mathcal{J}^+}\\) on the genus-g boundary \\(\\mathcal{J}^+\\) with n punctures.</li>
+            <li>\\(W_n(E_1, \dots, E_n)\\): The n-point connected resolvent \\(\\langle \\prod_{i=1}^n \\text{Tr}(\\frac{1}{E_i - M_1}) \\rangle_{c, DS}\\) calculated in the double-scaled two-matrix integral defined by the spectral curve \\(x(z) = -2 \\cos(\\pi b^{-1} \\sqrt{z}), y(z) = 2 \\cos(\\pi b \\sqrt{z})\\), as specified in Collier et al. [1].</li>
+            <li>\\(A_n^{\\text{Liouville}}(\\Delta_1, \dots, \\Delta_n)\\): The n-point amplitude in complex Liouville theory (with complex parameter \\(b\\)), whose explicit formula is given by Collier et al. [1].</li>
+            <li>Parameter Map: The relation \\(E_i = -\\cos(2\\pi \\alpha_i)\\", where \\(\\Delta_i = \\alpha_i(Q-\\alpha_i)\\) and \\(Q=b+1/b\\).</li>
+          </ul>
+          <p><strong>Task:</strong> Using the results from the prerequisite child nodes which establish the values/formulas for \\(\\mathcal{A}_n\\), \\(W_n\\), \\(A_n^{\\text{Liouville}}\\) and the parameter map, demonstrate the chain of equalities \\(\\mathcal{A}_n = A_n^{\\text{Liouville}} = W_n\\).</p>
+        `,
+      problemSolution: `
+          <p>The proof proceeds by combining the results of the prerequisites:</p>
+          <ol>
+              <li><strong>Prerequisite 1.1 shows:</strong> The calculated integrated dS correlator \\(\\mathcal{A}_n\\) is exactly equal to the complex Liouville amplitude \\(A_n^{\\text{Liouville}}(\\Delta_i)\\).</li>
+              <li><strong>Prerequisites 1.2, 1.4, 1.3 establish:</strong> The matrix model resolvent \\(W_n(E_i)\\) (Prereq 1.2) is known, via the established duality detailed in Collier et al. [1], to be equal to the complex Liouville amplitude \\(A_n^{\\text{Liouville}}(\\Delta_i)\\) (Prereq 1.4) when the arguments are related by the parameter map \\(E_i = -\\cos(2\\pi \\alpha_i(\\Delta_i))\\) (Prereq 1.3).</li>
+          </ol>
+          <p>Therefore, since both \\(\\mathcal{A}_n\\) and \\(W_n\\) are equal to \\(A_n^{\\text{Liouville}}\\) (when using the parameter map for \\(W_n\\)), we conclude they are equal to each other:</p>
+          $$ \\mathcal{A}_n = A_n^{\\text{Liouville}} = W_n $$
+          This achieves the goal.</p>`,
+      children: [
+        { // Prerequisite 1.1: Calculate A_n = A^Liouville
+          name: "Calculate A_n and Show A_n = A^Liouville",
+          linkDescription: "Prerequisite: Determine A_n and show its equality to the Liouville amplitude.",
+          problemStatement: `
+              <p><strong>Goal:</strong> Calculate the integrated dS3 correlator \\(\\mathcal{A}_n\\) and show it equals the complex Liouville amplitude \\(A_n^{\\text{Liouville}}\\).</p>
+              <p><strong>Input/Prerequisite:</strong> The formula for the bare correlator \\(F_n = \\langle \\mathcal{O}_1 \dots \\mathcal{O}_n \\rangle_{\Psi}\\) derived from the dS quantum state \\(|\\Psi\\rangle\\) (provided by Prereq 1.1.1). This \\(F_n\\) is identified with a boundary CFT correlator \\(\\langle \\Phi_{\Delta_1} \dots \\Phi_{\Delta_n} \\rangle_{\\text{CFT on } T^2_{\\tau}}\\).</p>
+              <p><strong>Task:</strong></p>
+              <ol>
+                  <li>Define the integral for \\(\\mathcal{A}_n\\) over the moduli space \\(\\mathcal{M}_{g,n}\\) of the boundary surface \\(\\mathcal{J}^+\\), specifying the measure \\(d\\mu\\):
+                     $$ \\mathcal{A}_n = \\int_{\\mathcal{M}_{g,n}} d\\mu \\, F_n(z_i; \\Delta_i; g_{\\mathcal{J}^+}(\\tau)) $$</li>
+                  <li>Argue why this integral, with the appropriate string-theoretic measure \\(d\\mu\\), computes the corresponding target space string amplitude.</li>
+                  <li>Conclude that \\(\\mathcal{A}_n = A_n^{\\text{Liouville}}(\\Delta_1, \dots, \\Delta_n)\\), using the explicit formula for \\(A_n^{\\text{Liouville}}\\) provided by Prereq 1.4.</li>
+              </ol>`,
+          problemSolution: `
+              <p>1. The integrated correlator \\(\\mathcal{A}_n\\) is defined by integrating the bare correlator \\(F_n\\) (from Prereq 1.1.1) over the moduli space \\(\\mathcal{M}_{g,n}\\):</p>
+                 $$ \\mathcal{A}_n = \\int_{\\mathcal{M}_{g,n}} d\\mu \\, F_n $$
+                 The measure \\(d\\mu\\) includes the integration over the complex structure \\(\\tau\\) and puncture positions \\(z_i\\), weighted appropriately (e.g., related to the Weil-Petersson measure or string path integral measure).
+              <p>2. The core argument (dS3 paper, Sec 4.1) is that integrating a boundary CFT correlator (which \\(F_n\\) represents) over the moduli space of the boundary surface *is* the definition of the corresponding string theory amplitude in the target space described by that CFT.</p>
+              <p>3. Since the boundary CFT was identified (via Prereq 1.1.1.1.1) as complex Liouville theory, the result of the integral must be the complex Liouville string amplitude \\(A_n^{\\text{Liouville}}\\) (whose formula is given explicitly in Prereq 1.4):</p>
+                 $$ \\mathcal{A}_n \\equiv A_n^{\\text{Liouville}}(\\Delta_1, \dots, \\Delta_n) $$
+              (This equivalence is asserted near Eq. 4.5 in the dS3 paper).</p>`,
+          children: [
+            { // Prerequisite 1.1.1: Calculate F_n
+              name: "Calculate Bare Correlator F_n",
+              linkDescription: "Prerequisite: Determine the correlator before boundary integration.",
+              problemStatement: `
+                  <p><strong>Goal:</strong> Calculate the n-point correlation function \\(F_n(z_i; \\Delta_i; g_{\mathcal{J}^+}) = \\langle \\mathcal{O}_{\Delta_1}(z_1) \dots \\mathcal{O}_{\Delta_n}(z_n) \\rangle_{\Psi}\\) on the boundary torus \\(\\mathcal{J}^+\\).</p>
+                  <p><strong>Input/Prerequisite:</strong> The definition of the dS quantum state \\(|\\Psi\\rangle\\) (from Prereq 1.1.1.1), which is identified with the Liouville CFT correlation function \\(\\langle V_{p_1} \dots V_{p_n} \\rangle^{(b)}\\).</p>
+                  <p><strong>Definitions:</strong></p>
+                  <ul>
+                    <li>\\(\\mathcal{O}_{\Delta_i}(z_i)\\): Operators creating massive scalar particles at points \\(z_i\\) on \\(\\mathcal{J}^+\\).</li>
+                    <li>\\(\\Delta_i = 1 + i \\lambda_i\\): Dimensions (principal series).</li>
+                    <li>\\(g_{\mathcal{J}^+}\\): Metric on the boundary torus, characterized by modulus \\(\\tau\\).</li>
+                    <li>\\(|\\Psi\\rangle\\): The specific dS quantum state.</li>
+                  </ul>
+                  <p><strong>Task:</strong> Express \\(F_n\\) in terms of the boundary CFT data (structure constants \\(C_{\Delta_1 \dots \Delta_n}\\) and conformal blocks \\(\\mathcal{F}_n\\)) derived from the quantization (Prereq 1.1.1.1.1).</p>`,
+              problemSolution: `
+                  <p>The state \\(|\\Psi\\rangle\\) (from Prereq 1.1.1.1) is identified with the Liouville correlation function \\(\\langle V_{p_1} \dots V_{p_n} \\rangle^{(b)}\\). The expectation value \\(F_n = \\langle \\mathcal{O}_1 \dots \\mathcal{O}_n \\rangle_{\Psi}\\) is calculated using this state.</p>
+                  <p>The calculation (dS3 paper, Sec 3) connects the bulk operators \\(\\mathcal{O}_i\\) to boundary CFT primary operators \\(\\Phi_{\Delta_i}\\) (related via dS/CFT dictionary, e.g., Eq. 3.13). Therefore, the correlator \\(F_n\\) is given by the correlation function of these boundary operators in the CFT derived from quantization (Prereq 1.1.1.1.1):</p>
+                  $$ F_n(z_i; \\Delta_i; \\tau) = \\langle \\Phi_{\Delta_1}(z_1) \dots \\Phi_{\Delta_n}(z_n) \\rangle_{\\text{Boundary CFT on Torus } T^2_{\\tau}} $$
+                  <p>This CFT correlator is constructed using the operator product expansion (OPE). It involves summing over intermediate channels (states \\(k\\)), weighted by products of the OPE structure constants \\(C_{\Delta_i \Delta_j \Delta_k}\\) and multiplied by the corresponding Virasoro conformal blocks \\(\\mathcal{F}_n\\) for the torus:</p>
+                  $$ F_n = \\sum_{\\text{intermediate states } k} C_{\Delta_i \Delta_j \Delta_k} C_{\Delta_k \dots} \\mathcal{F}_n(\\tau, z_i, \\Delta_i, \\Delta_k) $$
+                  The structure constants \\(C\\) are determined by the representation theory of the Virasoro algebra (from Prereq 1.1.1.1.1), and the blocks \\(\\mathcal{F}_n\\) are known functions encoding the conformal symmetry. (Structure referenced near Eq. 3.17).</p>`,
+              children: [
+                { // Prerequisite 1.1.1.1: Construct State |Ψ⟩
+                  name: "Construct State |Ψ⟩",
+                  linkDescription: "Prerequisite: Define the specific state vector for the expectation value.",
+                  problemStatement: `
+                      <p><strong>Goal:</strong> Define the specific, normalizable quantum state vector \\(|\\Psi\\rangle\\) within the Hilbert space \\(\\mathcal{H}_{\mathcal{J}^+}\\) (derived in Prereq 1.1.1.1.1).</p>
+                      <p><strong>Context:</strong> The Hilbert space \\(\\mathcal{H}_{\mathcal{J}^+}\\) is spanned by conformal blocks of the Virasoro algebra with central charge \\(c=13+6k\\) involving principal series representations \\(\\Delta \in 1+i\mathbb{R}\\).</p>
+                      <p><strong>Requirement:</strong> Define \\(|\\Psi\\rangle\\) such that it represents the physical state of the dS3 universe at future infinity \\(\\mathcal{J}^+\\), consistent with an inflating cosmology preparation and normalizability.</p>
+                    `,
+                  problemSolution: `
+                      <p>The paper proposes (Sec 3.2) constructing \\(|\\Psi\\rangle\\) via the path integral over the 'inflating universe' geometry:</p>
+                      $$ ds^2 = -dt^2 + \\sinh^2(t) ds_{\\Sigma_{g,n}}^2 $$
+                      (dS3 paper Eq. 3.5), where \\(\\Sigma_{g,n}\\) is the spatial slice. The Big Bang singularity at \\(t=0\\) is treated using TQFT methods as imposing a 'topological' boundary condition \\(\\mathcal{A}^a = \\bar{\\mathcal{A}}^a\\) (Eq. 3.7) on the Chern-Simons fields.
+                      <p>Evaluating the path integral on \\(\\Sigma_{g,n} \times [0, T \to \infty]\\) with these boundary conditions yields the state \\(|\\Psi\\rangle\\) at \\(\\mathcal{J}^+\\). Using the TQFT folding trick (Fig 5), this state is identified with the correlation function of the boundary CFT (complex Liouville) on the spatial slice \\(\\Sigma_{g,n}\\) (Eq. 3.9):</p>
+                      $$ \\Psi_{g,n}^{(b)}[g_{\\mathcal{J}^+}] = \\langle V_{p_1} \\dots V_{p_n} \\rangle_{\\text{Liouville on } \\Sigma_{g,n}^{(b)}} $$
+                      (Eq. 3.2) where \\(V_{p_i}\\) are Liouville primary operators with momenta \\(p_i\\) related to the dimensions \\(\\Delta_i = 1+i\lambda_i\\) (Eq. 3.1).
+                      <p>This Liouville correlator state \\(|\\Psi\\rangle\\) belongs to the Hilbert space \\(\\mathcal{H}_{\mathcal{J}^+}\\) constructed in Prereq 1.1.1.1.1. Crucially, it is argued (Sec 3.3) to be normalizable (Eq. 3.12), \\(\\langle \Psi | \Psi \\rangle < \infty\\), unlike the naive Hartle-Hawking state (Eq. 3.4), because Liouville theory has \\(Re(c_{eff})=1\\) (Eq. 3.13).</p>`,
+                  children: [
+                    { // Prerequisite 1.1.1.1.1: Derive Operator Algebra
+                      name: "Derive Operator Algebra",
+                      linkDescription: "Prerequisite: Define the operators and their algebra acting on the Hilbert space.",
+                      problemStatement: `
+                          <p><strong>Goal:</strong> Derive the quantum operator algebra (commutation relations, Kac-Moody currents, Virasoro algebra, central charge) acting on the Hilbert space \\(\\mathcal{H}_{\mathcal{J}^+}\\) via geometric quantization of the dS3 phase space.</p>
+                          <p><strong>Input/Prerequisite:</strong> The classical phase space defined by the symplectic structure \\(\\omega\\) and the resulting Poisson brackets (from Prereq 1.1.1.1.1.1), specifically \\(\\{ A_z^a(z), \\bar{A}_\\bar{w}^b(w) \\}_{PB} = -\\frac{2\\pi}{k} \\eta^{ab} \\delta^{(2)}(z-w)\\) (dS3 paper Eq. 2.5).</p>
+                          <p><strong>Method:</strong> Apply geometric quantization (using the holomorphic polarization, dS3 paper Eq. B.8). Explicitly solve the quantum version of the Chern-Simons flatness constraints \\(\\mathcal{F}(\\mathcal{A})^{\pm,3} \\Psi = 0\\) (dS3 paper Eq. B.10) to determine the constraints on the wavefunctional \\(\\Psi\\). Show these constraints are equivalent to the Virasoro Ward identities and determine the one-loop corrected central charge \\(c\\).</p>
+                        `,
+                      problemSolution: `
+                          <p>1. <strong>Quantization & Commutation Relations:</strong> Promoting the Poisson bracket (from Prereq 1.1.1.1.1.1) via \\(\\{*,*\\}_{PB} \to -i[*,*]\\) gives the fundamental commutation relation:</p>
+                             $$ [\\hat{A}_z^a(z), \\hat{\\bar{A}}_\\bar{w}^b(w)] = -\\frac{2\\pi i}{k} \\eta^{ab} \\delta^{(2)}(z-w) $$
+                             Operators are realized as functional derivatives acting on wavefunctional \\(\\Psi\\) (dS3 paper Eq. B.9).
+                          <p>2. <strong>Solving Quantum Constraints (dS3 paper Appendix B.2):</strong> The quantum constraints \\(\\mathcal{F}(\\mathcal{A})^{\pm,3} \\Psi = 0\\) (Eq. B.10) are solved step-by-step:</p>
+                              <ul>
+                                  <li>Using \\(A^- = e^\\phi (dz + \\mu d\\bar{z})\\), \\(A^3_z = \\omega\\) (Eq. B.12), the \\(\\mathcal{F}^-\\) constraint fixes the \\(\\omega\\)-dependence of \\(\\Psi\\) via an exponential factor \\(e^{S[\\mu,\\phi,\\omega]}\\), where \\(S = -\\frac{ik}{4\\pi} \\int [ \\frac{1}{2} \\mu\\omega^2 - \omega(\\bar{\\partial}\\phi - \\mu\\partial\\phi - \\partial\\mu) ] dz \\wedge d\\bar{z}\\) (Eq. B.15). Let \\(\\Psi = e^S \\Psi_1\\).</li>
+                                  <li>The \\(\\mathcal{F}^3\\) constraint then acts on \\(\\Psi_1\\) and fixes its \\(\\phi\\)-dependence via another exponential factor \\(e^{\\tilde{S}[\\mu,\\phi]}\\), where \\(\\tilde{S} = \\frac{ik}{4\\pi} \\int [ \\frac{1}{2} \\partial\\phi \\bar{\\partial}\\phi - \\mu (\\frac{1}{2}(\\partial\\phi)^2 - \\partial^2\\phi) ] dz \\wedge d\\bar{z}\\) (Eq. B.19). This \\(\\tilde{S}\\) generates the Weyl anomaly \\(\\propto c_{class} R\\) for \\(c_{class}=6k\\). Let \\(\\Psi_1 = e^{\\tilde{S}} \\Psi[\\mu]\\).</li>
+                                  <li>The final \\(\\mathcal{F}^+\\) constraint, after careful calculation (Eq. B.17, B.20), reduces to an equation purely on the reduced wavefunctional \\(\\Psi[\\mu]\\):
+                                     $$ \\left[ (\\bar{\\partial} - 2(\\partial\\mu) - \\mu\\partial) \\frac{\\delta}{\\delta\\mu} + \\frac{i(6k)}{24\\pi} \\partial^3\\mu \\right] \\Psi[\\mu] = 0 $$
+                                     (This is Eq. B.21, before the one-loop correction).</li>
+                              </ul>
+                          <p>3. <strong>Virasoro Ward Identity:</strong> Eq. B.21 is explicitly shown (via Eq. B.22-B.25) to be the standard Virasoro Ward identity \\((\\bar{\\partial} - T(z) \text{ action}) \Psi = 0\\) which arises from \\(\\bar{\\partial} T = 0\\) in CFT, confirming that \\(\\Psi[\\mu]\\) transforms as a CFT object under changes in complex structure \\(\\mu\\).</p>
+                          <p>4. <strong>One-Loop Correction to Central Charge:</strong> The classical derivation yields \\(c_{class} = 6k\\). However, a necessary quantum correction (metaplectic correction / half-form quantization, discussed in Appendix B.2) related to the measure on Teichmüller space shifts the effective central charge by +13. This is analogous to the shift in AdS3 gravity and relates to anomaly cancellation involving string theory ghosts if viewed that way. The final central charge governing the Virasoro algebra is:</p>
+                             $$ c = 13 + 6k $$
+                             Since \\(k=i\\ell/(4G_N)\\) is imaginary, \\(c \\in 13 + i\\mathbb{R}\\) (Eq. 2.8, 2.11). The Hilbert space \\(\\mathcal{H}_{\mathcal{J}^+}\\) is spanned by conformal blocks of this Virasoro algebra with dimensions \\(\\Delta \in 1 + i\\mathbb{R}\\).</p>`,
+                      children: [
+                        { // Prerequisite 1.1.1.1.1.1: Determine Symplectic Structure ω
+                          name: "Determine Symplectic Structure ω",
+                          linkDescription: "Prerequisite: Derive the classical symplectic form to be quantized.",
+                          problemStatement: `
+                              <p><strong>Goal:</strong> Derive the symplectic 2-form \\(\\omega\\) on the classical phase space \\(\\mathcal{P}\\) of boundary connections \\(A|_{\\mathcal{J}^+}, \\bar{A}|_{\\mathcal{J}^+}\\) for SL(2,\\(\\mathbb{C}\\)) Chern-Simons theory representing dS3 gravity.</p>
+                              <p><strong>Input:</strong> The Chern-Simons action:</p>
+                              $$ S = \\frac{k}{4\\pi} \\int_M \\text{Tr}(A d A + \\frac{2}{3}A^3) - \\frac{\\bar{k}}{4\\pi} \\int_M \\text{Tr}(\\bar{A} d \\bar{A} + \\frac{2}{3}\\bar{A}^3) $$
+                              with level \\(k = \\frac{i \\ell}{4 G_N}\\) and \\(\\bar{k}=-k\\) (dS3 paper Eq. 2.3, 2.4).</p>
+                              <p><strong>Method:</strong> Apply standard canonical analysis for Chern-Simons theory on a manifold M with boundary \\(\\partial M = \\mathcal{J}^+\\) (using established methods, e.g., from Witten '89, Axelrod et al. '91, Elitzur et al. '89).</p>
+                            `,
+                          problemSolution: `
+                              <p>Standard canonical analysis of the Chern-Simons action involves varying \\(S\\) and analyzing the boundary term. The variation yields:</p>
+                              $$ \\delta S = \\text{(Bulk terms)} + \\frac{k}{4\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(A \\wedge \\delta A) - \\frac{\\bar{k}}{4\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(\\bar{A} \\wedge \\delta \\bar{A}) $$
+                              <p>Identifying the boundary term with \\(\\int p \\delta q\\), we can read off the symplectic form \\(\\omega = \\int \\delta p \wedge \\delta q\\). In this case, for variations \\(\\delta_1, \\delta_2\\) of the boundary fields:</p>
+                              $$ \\omega(\\delta_1, \\delta_2) = \\frac{k}{4\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(\\delta_1 A \\wedge \\delta_2 A - \\delta_2 A \wedge \\delta_1 A) - \\frac{\\bar{k}}{4\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(\\delta_1 \\bar{A} \\wedge \\delta_2 \\bar{A} - \\delta_2 \\bar{A} \wedge \\delta_1 \\bar{A}) $$
+                              $$ \\omega = \\frac{k}{2\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(\\delta A \\wedge \\delta A) - \\frac{\\bar{k}}{2\\pi} \\int_{\\mathcal{J}^+} \\text{Tr}(\\delta \\bar{A} \\wedge \\delta \\bar{A}) $$
+                              <p>Using \\(\\bar{k} = -k\\), this becomes:</p>
+                              $$ \\omega = \\frac{k}{2\\pi} \\int_{\\mathcal{J}^+} \\left[ \\text{Tr}(\\delta A \\wedge \\delta A) + \\text{Tr}(\\delta \\bar{A} \\wedge \\delta \\bar{A}) \\right] $$
+                              <p>This \\(\\omega\\) generates the Poisson brackets. In complex coordinates \\(z, \\bar{z}\\) on the torus \\(\\mathcal{J}^+\\), the non-zero fundamental bracket consistent with \\(\\omega\\) and the action's structure is given as (dS3 paper Eq. 2.5):</p>
+                              $$ \\{ A_z^a(z), \\bar{A}_\\bar{w}^b(w) \\}_{PB} = -\\frac{2\\pi}{k} \\eta^{ab} \\delta^{(2)}(z-w) $$
+                              (using an appropriate normalization for the Killing form \\(\\eta^{ab}\\)). This defines the classical structure for quantization.</p>`
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }, // End Prerequisite 1.1 Chain
+        { // Prerequisite 1.2: Calculate W_n
+          name: "Calculate Matrix Resolvent W_n",
+          linkDescription: "Prerequisite: Determine the value/formula for the matrix model resolvent.",
+          problemStatement: `
+              <p><strong>Goal:</strong> Provide the definition and calculation method for the n-point connected resolvents \\(W_n(E_1, \dots, E_n)\\) of the specific double-scaled two-matrix integral identified by Collier et al. [1].</p>
+              <p><strong>Definition:</strong></p>
+              $$ W_n(E_1, \dots, E_n) = \\left\\langle \\prod_{i=1}^n \\text{Tr}\\left(\\frac{1}{E_i - M_1}\\right) \\right\\rangle_{\\text{connected, Double-Scaled}} $$
+              <p><strong>Context:</strong> The model is defined by its spectral curve \\((x(z), y(z))\\) given in Collier et al. [1] (Eq. 10 / dS3 paper Eq. C.3) and arises from a two-matrix integral \\(Z = \\int [dM_1][dM_2] e^{-N \\text{Tr}(V_1+V_2-M_1M_2)}\\) near the \\(m=2\\) critical point.</p>
+            `,
+          problemSolution: `
+              <p>The resolvents \\(W_n\\) for the matrix model specified by the spectral curve</p>
+              $$ x(z) = -2 \\cos(\\pi b^{-1} \\sqrt{z}), \\quad y(z) = 2 \\cos(\\pi b \\sqrt{z}) $$
+              (Eq. C.3) are calculated using the Eynard-Orantin topological recursion formalism, as detailed in Collier et al. [1].
+              <p><strong>Topological Recursion Algorithm:</strong></p>
+              <ol>
+                <li><strong>Inputs:</strong> The spectral curve \\((x(z), y(z))\\) and the fundamental bidifferential (Bergman kernel) \\(B(z_1, z_2) = \\frac{dz_1 dz_2}{(z_1-z_2)^2}\\).</li>
+                <li><strong>Base Cases (Differentials):</strong> \\(\\omega_{0,1}(z) = y(z)dx(z)\\) and \\(\\omega_{0,2}(z_1, z_2) = B(z_1, z_2)\\).</li>
+                <li><strong>Recursive Step:</strong> Compute higher genus/point differentials \\(\\omega_{g,n}(z_1, \dots, z_n)\\) via the formula:
+                   $$ \\omega_{g,n}(z_1, \dots, z_n) = \\sum_{a} \\text{Res}_{z \\to a} K(z_1, z) \\left[ \\omega_{g-1, n+1}(z, \\sigma_a(z), z_2, \dots, z_n) + \\sum'_{\substack{g_1+g_2=g \\ I \\cup J = \\{2..n\\}}} \\omega_{g_1, |I|+1}(z, z_I) \\omega_{g_2, |J|+1}(\\sigma_a(z), z_J) \\right] $$
+                   where the sum is over branch points \\(a\\) of \\(x(z)\\) (where \\(dx(a)=0\\)), \\(\\sigma_a(z)\\) is the local deck transformation swapping sheets near \\(a\\), and \\(K(z_1, z)\\) is the recursion kernel:
+                   $$ K(z_1, z) = \\frac{\\int_z^{\\sigma_a(z)} \\omega_{0,2}(z_1, \\cdot)}{2 (\\omega_{0,1}(\\sigma_a(z)) - \\omega_{0,1}(z))} $$</li>
+                <li><strong>Resolvents from Differentials:</strong> Obtain the connected resolvent \\(W_{g,n}(E_1, \dots, E_n)\\) from the differential \\(\\omega_{g,n}(z_1, \dots, z_n)\\) using the relation \\(E_i = x(z_i)\\) and \\(\\omega_{g,n}(z_1, \dots, z_n) = W_{g,n}(x(z_1), \dots, x(z_n)) dx(z_1) \dots dx(z_n)\\) (adjusting for conventions, see Eq. 9 in Collier et al. [1]). Sum over genus g with factor \\(g_s^{2g-2+n}\\) for the full \\(W_n\\).</li>
+              </ol>
+              <p>This algorithm, applied by Collier et al. [1], generates all \\(W_n\\) needed for the duality.</p>`
+        },
+        { // Prerequisite 1.3: Parameter Map
+          name: "Establish Parameter Map (Δi) ↔ (Ei)",
+          linkDescription: "Prerequisite: Determine the map relating arguments of A_n / A^L and W_n.",
+          problemStatement: `
+              <p><strong>Goal:</strong> Determine the explicit functional map \\(E = f(\\Delta)\\) relating the physical dimension \\(\\Delta\\) used in \\(A_n^{\\text{Liouville}}\\) to the spectral parameter \\(E\\) used in \\(W_n\\).</p>
+              <p><strong>Context & Prerequisite Knowledge:</strong> The map arises from the established duality between complex Liouville theory and the double-scaled matrix model (Prereq 1.2), detailed in Collier et al. [1]. The Liouville dimension is \\(\\Delta = \alpha(Q-\alpha)\\), where \\(Q=b+1/b\\).</p>
+            `,
+          problemSolution: `
+              <p>The explicit mapping between the Liouville momentum \\(\\alpha\\) and the matrix model spectral parameter \\(E\\) (associated with the resolvent \\(W_n(E_i)\\) from Prereq 1.2) is a result derived from the duality in Collier et al. [1]. It is stated as Eq. 4.10 in the dS3 paper:</p>
+              $$ E = -\\cos(2\\pi \\alpha) $$
+              <p>To relate the dS dimension \\(\\Delta_i = 1 + i \\lambda_i\\) to \\(E_i\\):</p>
+              <ol>
+                  <li>Use the Liouville dimension-momentum relation \\(\\Delta_i = \\alpha_i(Q-\\alpha_i)\\). The background charge \\(Q=b+1/b\\) is determined by the complex Liouville parameter \\(b\\) (likely \\(Q=2\\) convention for the relevant \\(c=1\\) related theory). Solve this quadratic equation for the complex momentum \\(\\alpha_i\\), choosing the physically appropriate root.</li>
+                  <li>Substitute this \\(\\alpha_i\\) into the map: \\(E_i = -\\cos(2\\pi \\alpha_i)\\).</li>
+              </ol>
+              <p>This function \\(E_i = f(\\Delta_i)\\) precisely relates the arguments required for the equality \\(A_n^{\\text{Liouville}}(\\Delta_i) = W_n(E_i)\\).</p>`
+        },
+        { // Prerequisite 1.4: Identify A^Liouville_n
+          name: "Identify Complex Liouville Amplitude A^Liouville_n",
+          linkDescription: "Prerequisite: State the known formula for the intermediate Liouville amplitude.",
+          problemStatement: `
+              <p><strong>Goal:</strong> State the explicit mathematical formula for the n-point amplitude \\(A^{Liouville}_n(\\Delta_1, \dots, \\Delta_n)\\) in the complex Liouville theory specified in Collier et al. [1].</p>
+              <p><strong>Context & Prerequisite Knowledge:</strong> These formulas are known results from Liouville Field Theory studies, particularly as calculated in Collier et al. [1]. Key components are the DOZZ formula and the stable graph expansion.</p>
+            `,
+          problemSolution: `
+              <p>The amplitudes \\(A_n^{\\text{Liouville}}\\) are calculated explicitly in Collier et al. [1] (arXiv:2409.17246v2).</p>
+              <p>1. <strong>Parameters:</strong> Complex Liouville coupling \\(b\\) (such that \\(c=1+6Q^2 \in 13+i\mathbb{R}\\)), background charge \\(Q=b+1/b\\), momenta \\(\\alpha_i\\), dimensions \\(\\Delta_i = \alpha_i(Q-\alpha_i) = 1+i\lambda_i\\).</p>
+              <p>2. <strong>3-Point Amplitude (n=3):</strong> Given by the complex DOZZ formula (derived by analytic continuation):</p>
+              $$ A_3^{\\text{Liouville}}(\\Delta_i) = C_{\\text{DOZZ}}(\\alpha_1, \\alpha_2, \\alpha_3) = \\frac{\\left[\\pi \\mu \\gamma(b^2)\\right]^{(Q-\\sum \\alpha_k)/b} \\Upsilon_b'(0) \\prod_{j=1}^3 \\Upsilon_b(2\\alpha_j)}{\\Upsilon_b(\\sum \\alpha_k - Q) \\prod_{j=1}^3 \\Upsilon_b(\\sum_{k \neq j} \\alpha_k - \alpha_j - Q)} $$
+              where \\(\\gamma(x)=\\Gamma(x)/\Gamma(1-x)\\) and \\(\\Upsilon_b(x)\\) is the Liouville Upsilon function, defined for complex \\(b\\). (Cited via Eq. 4.6).
+              <p>3. <strong>n-Point Amplitude (n>3, genus g):</strong> Collier et al. [1] derives a formula (Eq. 13 therein) summing over stable graphs \\(\\Gamma \in \\mathcal{G}_{g,n}^{\\infty}\\):</p>
+              $$ A_{g,n}^{(b)}(p) = \\sum_{\\Gamma} \\frac{1}{|Aut(\\Gamma)|} \\int' \\prod_{e \in \mathcal{E}_{int}} (-2p_e dp_e) \\prod_{v \in \mathcal{V}} \\left[ \\left( \\frac{b(-1)^{m_v}}{\\sqrt{2}\\sin(\\pi m_v b^2)} \\right)^{2g_v-2+n_v} \\times \\prod_{j \in I_v} \\sqrt{2}\\sin(2\\pi m_v b p_j) V_{g_v, n_v}^{(b)}(ip_v) \\right] $$
+              where \\(p_i\\) relates to \\(\\alpha_i\\), \\(\\int'\\) denotes a specific integration prescription, \\(m_v\\) are vertex colors, and \\(V_{g_v, n_v}^{(b)}\\) are "quantum volumes" related to Virasoro minimal string amplitudes. This complex formula provides \\(A_n^{\\text{Liouville}}\\) for all n, g. (Referenced via Eq. 4.7).</p>`
+        }
+      ]
+    }, // End Prerequisite 1
+    { // Prerequisite 2 for Overall Goal
+      name: "Demonstrate Entropy Match (S_MM = S_GH)",
+      linkDescription: "Prerequisite: Establish the equality between matrix model entropy and Gibbons-Hawking entropy.",
+      problemStatement: `
+          <p><strong>Goal:</strong> Prove the equality \\(S_{MM} = S_{GH}\\).</p>
+          <p><strong>Definitions & Context:</strong></p>
+          <ul>
+            <li>Microscopic Entropy: \\(S_{MM} = 2 \\ln N_{\\text{eff}}\\), where \\(N_{\\text{eff}} = \\int_{E_c}^{E_0} dE e^{S_0} \\rho_{0}(E)\\) is the effective number of states in the first band \\([E_c, E_0]\\) of the matrix model density \\(\\rho_0(E)\\). \\(e^{S_0}\\) is the topological expansion parameter.</li>
+            <li>Gravitational Entropy: \\(S_{GH} = \\frac{\\text{Area}}{4G_N} = 2\\pi k\\), where \\(k = \\ell / (4G_N)\\).</li>
+          </ul>
+          <p><strong>Required Proof:</strong> Show numerical equality by expressing both \\(S_{MM}\\) and \\(S_{GH}\\) in terms of the common parameters \\(S_0\\) and \\(b\\) using the duality map, and verifying the result.</p>
+          <p><strong>Prerequisites:</strong> Explicit calculation of \\(S_{MM}\\) (Prereq 2.1) and \\(S_{GH}\\) expressed in terms of \\(S_0, b\\) (Prereq 2.2).</p>`,
+      problemSolution: `
+          <p>The equality \\(S_{MM} = S_{GH}\\) is demonstrated by comparing the explicit results obtained from the prerequisite calculations:</p>
+          <ol>
+              <li><strong>Prerequisite 2.1 Result:</strong> Provides \\(S_{MM}\\) in terms of the ZZ-instanton tension \\(T_{1,1}^{(b)} = e^{S_0} \\hat{T}_{1,1}^{(b)}\\):
+                  $$ S_{MM} = 2 \\ln N_{\\text{eff}} = 2 \\ln \\left| \\frac{1}{2\\pi i} T_{1,1}^{(b)} \\right| = 2S_0 + 2 \\ln \\left| \\frac{\\hat{T}_{1,1}^{(b)}}{2\\pi} \\right| $$
+                  where \\(\\hat{T}_{1,1}^{(b)} = \\frac{8b^2 \\sin(\\pi b^2)\\sin(\\pi b^{-2})}{1-b^4}\\) (dS3 paper Eq. 4.33, 4.34).</li>
+              <li><strong>Prerequisite 2.2 Result:</strong> Expresses \\(S_{GH}\\) in terms of \\(S_0\\) and \\(b\\) via \\(S_{GH} = \\ln|\\mathcal{Z}_{grav}^{S^3}|\\) and the relation \\(|\\mathcal{Z}_{grav}^{S^3}| \sim e^{2S_0} |C_{S^2}^{(b)}|\\):
+                  $$ S_{GH} \\approx 2S_0 + \\ln |C_{S^2}^{(b)}| $$
+                  where \\(C_{S^2}^{(b)} = 32\\pi^4 \\left( \\frac{\\sin(\\pi b^2)\\sin(\\pi b^{-2})}{b^2-b^{-2}} \\right)^2\\) (dS3 paper Eq. 4.4).</li>
+          </ol>
+          <p>To show \\(S_{MM} = S_{GH}\\), we need to verify if \\(2 \\ln |\\hat{T}_{1,1}^{(b)} / (2\\pi)| \\approx \\ln |C_{S^2}^{(b)}|\\), or equivalently \\(|\\hat{T}_{1,1}^{(b)} / (2\\pi)|^2 \propto |C_{S^2}^{(b)}|\\) (ignoring overall constants from \\(\\approx\\) and \\(\\sim\\)).</p>
+          <p>Check (dS3 paper Eq. 4.36):</p>
+          $$ |\\hat{T}_{1,1}^{(b)}|^2 = \\left| \\frac{8b^2 \\sin(\\pi b^2)\\sin(\\pi b^{-2})}{1-b^4} \\right|^2 $$
+          $$ |C_{S^2}^{(b)}| = 32\\pi^4 \\left| \\frac{\\sin(\\pi b^2)\\sin(\\pi b^{-2})}{b^2-b^{-2}} \\right|^2 $$
+          <p>The paper asserts these are proportional after accounting for factors like \\((2\\pi)^2\\) and using algebraic identities involving \\(b\\). Explicitly checking the proportionality confirms that the non-\\(S_0\\) terms match structurally, thus verifying \\(S_{MM} = S_{GH}\\) based on the consistency relations of the duality. (Argument detailed in Sec 4.4).</p>`,
+      children: [
+        { // Prerequisite 2.1: Calculate S_MM
+          name: "Calculate Matrix Model Entropy S_MM",
+          linkDescription: "Prerequisite: Determine the entropy from the matrix model's microstate count.",
+          problemStatement: `
+              <p><strong>Goal:</strong> Calculate the microscopic entropy \\(S_{MM} = 2 \\ln N_{\\text{eff}}\\) for the dual double-scaled matrix model.</p>
+              <p><strong>Inputs/Prerequisites:</strong></p>
+              <ul>
+                 <li>The density of states \\(\\rho_{0}(E)\\) for the matrix model (derived from Prereq 1.2).</li>
+                 <li>The topological expansion parameter \\(e^{S_0}\\).</li>
+                 <li>The energy range \\([E_c, E_0] = [2, 2\\cos(\\pi b^{-2})]\\) defining the first physical band.</li>
+              </ul>
+              <p><strong>Task:</strong> Evaluate \\(N_{\\text{eff}} = \\int_{E_c}^{E_0} dE e^{S_0} \\rho_{0}(E)\\) and compute \\(S_{MM} = 2 \\ln N_{\\text{eff}}\\).</p>`,
+          problemSolution: `
+              <p>1. The leading density of states is given by (dS3 paper Eq. C.4):</p>
+                 $$ \\rho_0(E) = \\frac{2}{\\pi} \\sinh(-i\\pi b^2) \\sin\\left(-ib^2 \\text{arccosh}\\left(\\frac{E}{2}\\right)\\right) $$
+              <p>2. The effective number of states \\(N_{\\text{eff}}\\) involves the integral (dS3 paper Eq. 4.32):</p>
+                 $$ N_{\\text{eff}} = e^{S_0} \\int_{2}^{2\\cos(\\pi b^{-2})} dE \\, \\rho_0(E) $$
+              <p>3. This integral is evaluated in the paper (Sec 4.4, Appendix C) by relating it to the ZZ-instanton tension \\(T_{1,1}^{(b)}\\) calculated in Collier et al. [1] (Eq. 16 therein):</p>
+                 $$ T_{1,1}^{(b)} = e^{S_0} \\hat{T}_{1,1}^{(b)} = e^{S_0} \\left( \\frac{8b^2 \\sin(\\pi b^2)\\sin(\\pi b^{-2})}{1-b^4} \\right) $$
+                 The result of the integration is found to be:
+                 $$ N_{\\text{eff}} = \\frac{1}{2\\pi i} T_{1,1}^{(b)} $$
+              <p>4. Using the definition \\(S_{MM} = 2 \\ln N_{\\text{eff}}\\) (to count matrix entries):</p>
+                 $$ S_{MM} = 2 \\ln \\left| \\frac{1}{2\\pi i} T_{1,1}^{(b)} \\right| = 2 \\ln \\left| \\frac{e^{S_0} \\hat{T}_{1,1}^{(b)}}{2\\pi i} \\right| $$
+                 $$ S_{MM} = 2S_0 + 2 \\ln \\left| \\frac{\\hat{T}_{1,1}^{(b)}}{2\\pi} \\right| = 2S_0 + 2 \\ln \\left| \\frac{4b^2 \\sin(\\pi b^2)\\sin(\\pi b^{-2})}{\\pi(1-b^4)} \\right| $$
+                 (This is the explicit result from Eq. 4.33, taking magnitude).</p>`
+        },
+        { // Prerequisite 2.2: Calculate S_GH in MM Variables
+          name: "Determine S_GH in Matrix Model Variables",
+          linkDescription: "Prerequisite: Express the gravitational entropy using matrix model parameters via the duality map.",
+          problemStatement: `
+              <p><strong>Goal:</strong> Express the gravitational Gibbons-Hawking entropy \\(S_{GH}\\) purely in terms of the matrix model parameters (\\(S_0, b\\)).</p>
+              <p><strong>Inputs/Prerequisites:</strong></p>
+              <ul>
+                <li>The definition \\(S_{GH} = \\ln|\\mathcal{Z}_{grav}^{S^3}|\\) (ignoring phase, based on Eq. 1.1).</li>
+                <li>The formula \\(S_{GH} = 2\\pi k\\), where \\(k = \\ell / (4G_N)\\) (Eq. 5.1).</li>
+                <li>The consistency relation from the duality linking \\(|\\mathcal{Z}_{grav}^{S^3}|\\) to \\(S_0\\) and \\(b\\) via the sphere normalization \\(C_{S^2}^{(b)}\\) (Eq. 4.5, 4.3, 4.4).</li>
+              </ul>`,
+          problemSolution: `
+              <p>1. Start with the definition used in the comparison: \\(S_{GH} = \\ln|\\mathcal{Z}_{grav}^{S^3}|\\).</p>
+              <p>2. Use the consistency relation derived from matching the 3D gravity description to the string theory normalization (Eq. 4.5, 4.3):</p>
+                 $$ |\\mathcal{Z}_{grav}^{S^3}| \\sim e^{2S_0} |C_{S^2}^{(b)}| $$
+                 (where \\(\\sim\\) ignores overall constants).
+              <p>3. Substitute the explicit formula for \\(C_{S^2}^{(b)}\\) (Eq. 4.4):</p>
+                 $$ C_{S^2}^{(b)} = 32\\pi^4 \\left( \\frac{\\sin(\\pi b^2)\\sin(\\pi b^{-2})}{b^2-b^{-2}} \\right)^2 $$
+              <p>4. Take the logarithm to find \\(S_{GH}\\) in terms of \\(S_0\\) and \\(b\\) (ignoring additive constants arising from the \\(\\sim\\)):</p>
+                 $$ S_{GH} = \\ln|\\mathcal{Z}_{grav}^{S^3}| \\approx 2S_0 + \\ln |C_{S^2}^{(b)}| $$
+                 $$ S_{GH} \\approx 2S_0 + 2 \\ln \\left| \\frac{4 \\sqrt{2} \\pi^2 \\sin(\\pi b^2)\\sin(\\pi b^{-2})}{b^2-b^{-2}} \\right| $$
+              This expresses \\(S_{GH}\\) in the desired parameter basis for comparison with \\(S_{MM}\\).</p>`
+        }
+      ]
+    } // End Prerequisite 2
+  ]
+};
+  /************************************************************
+   * 2) Basic D3 Tree Setup
+   ************************************************************/
+  const margin = { top: 20, right: 90, bottom: 30, left: 90 },
+        width  = 1400 - margin.left - margin.right,
+        height = 1200 - margin.top - margin.bottom;
+
+  const svg = d3.select("#chart")
+    .append("svg")
+    .attr("width",  width  + margin.left + margin.right)
+    .attr("height", height + margin.top  + margin.bottom)
+    .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  const treemap = d3.tree().size([height, width]);
+
+  let root = d3.hierarchy(treeData);
+  root.x0 = height / 2;
+  root.y0 = 0;
+
+  // Collapse all children except the root
+  if (root.children) {
+    root.children.forEach(collapse);
+  }
+  update(root);
+
+  // A function to collapse a node and all its children
+  function collapse(d) {
+    if (d.children) {
+      d._children = d.children;
+      d._children.forEach(collapse);
+      d.children = null;
+    }
+  }
+
+  /************************************************************
+   * 3) The update function for rendering
+   ************************************************************/
+  function update(source) {
+    const treeData = treemap(root);
+    const nodes = treeData.descendants();
+    const links = treeData.descendants().slice(1);
+
+    // Instead of d.y = d.depth * 220, add some offset to the right
+    nodes.forEach(d => {
+      d.y = (d.depth * 220) + 200;  
+    });
+
+    // ---------- NODES ----------
+    let node = svg.selectAll("g.node")
+      .data(nodes, d => d.id || (d.id = Date.now() + Math.random()));
+
+    let nodeEnter = node.enter().append("g")
+      .attr("class", "node")
+      .attr("transform", d => `translate(${source.y0},${source.x0})`)
+      .on("click", (event, d) => clickNode(d));
+
+    nodeEnter.append("circle")
+      .attr("class", "nodeCircle")
+      .attr("r", 1e-6)
+      .style("fill", d => d._children ? "lightsteelblue" : "#fff");
+
+    nodeEnter.append("text")
+      .attr("dy", ".35em")
+      .attr("x", d => d.children || d._children ? -13 : 13)
+      .attr("text-anchor", d => d.children || d._children ? "end" : "start")
+      .text(d => d.data.name);
+
+    let nodeUpdate = nodeEnter.merge(node);
+    nodeUpdate.transition()
+      .duration(750)
+      .attr("transform", d => `translate(${d.y},${d.x})`);
+
+    nodeUpdate.select("circle.nodeCircle")
+      .attr("r", 8)
+      .style("fill", d => d._children ? "lightsteelblue" : "#fff")
+      .style("cursor", "pointer");
+
+    let nodeExit = node.exit().transition()
+      .duration(750)
+      .attr("transform", d => `translate(${source.y},${source.x})`)
+      .remove();
+    nodeExit.select("circle").attr("r", 1e-6);
+    nodeExit.select("text").style("fill-opacity", 1e-6);
+
+    // ---------- LINKS ----------
+    let link = svg.selectAll("path.link")
+      .data(links, d => d.id);
+
+    let linkEnter = link.enter().insert("path", "g")
+      .attr("class", "link")
+      .attr("d", d => {
+        let o = { x: source.x0, y: source.y0 };
+        return diagonal(o, o);
+      })
+      .on("click", (event, d) => clickEdge(d));
+
+    let linkUpdate = linkEnter.merge(link);
+    linkUpdate.transition()
+      .duration(750)
+      .attr("d", d => diagonal(d, d.parent));
+
+    let linkExit = link.exit().transition()
+      .duration(750)
+      .attr("d", d => {
+        let o = { x: source.x, y: source.y };
+        return diagonal(o, o);
+      })
+      .remove();
+
+    nodes.forEach(d => {
+      d.x0 = d.x;
+      d.y0 = d.y;
+    });
+  }
+
+  function diagonal(s, d) {
+    return `M ${s.y} ${s.x}
+            C ${(s.y + d.y) / 2} ${s.x},
+              ${(s.y + d.y) / 2} ${d.x},
+              ${d.y} ${d.x}`;
+  }
+
+  function clickNode(d) {
+    if (d.children) {
+      d._children = d.children;
+      d.children = null;
+    } else {
+      d.children = d._children;
+      d._children = null;
+    }
+    update(d);
+
+    let html = `
+      <strong>Node:</strong> ${d.data.name}<br/><br/>
+      <strong>Problem Statement:</strong>
+      <p>${d.data.problemStatement || "No statement available."}</p>
+      <strong>Problem Solution (Derivation):</strong>
+      <p>${d.data.problemSolution || "No solution/derivation found."}</p>
+    `;
+    d3.select("#details").html(html);
+
+    // Re-typeset any new math with MathJax
+    if (window.MathJax && window.MathJax.typeset) {
+      window.MathJax.typeset();
+    }
+  }
+
+  function clickEdge(d) {
+    let parentName = d.parent ? d.parent.data.name : "Root";
+    let childName = d.data.name;
+    let linkDesc = d.data.linkDescription || "No link description provided.";
+    let html = `
+      <strong>Edge:</strong> ${parentName} &rarr; ${childName}<br/><br/>
+      <strong>Logical Connection:</strong>
+      <p>${linkDesc}</p>
+    `;
+    d3.select("#details").html(html);
+
+    if (window.MathJax && window.MathJax.typeset) {
+      window.MathJax.typeset();
+    }
+  }
+  </script>
+</body>
+</html>
